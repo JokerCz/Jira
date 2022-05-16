@@ -46,6 +46,11 @@
     "lint-staged": "^12.4.1",
     "prettier": "2.6.2"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
   }
