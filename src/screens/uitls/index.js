@@ -20,7 +20,7 @@ export const cleanObject = (object) => {
 export const useMount = (callback) => {
   useEffect(() => {
     callback();
-  }, []);
+  }, [callback]);
 };
 
 // const debounce = (func, delay) => {
@@ -42,7 +42,7 @@ export const useMount = (callback) => {
 // debounce 原理讲解
 // 0s ------------> 1s ------------> 2s ------------> ...
 //  一定要理解： 这三个函数都是同步操作，所以他们都是在0~1s这个时间段内瞬间完成的；
-//  log()#1  // timeoout#1
+//  log()#1  // timeout #1
 //  log()#2  // 发现 timeout#1！取消之， 然后设置timeout#2
 //  log()#3  // 发现 timeout#2！取消之， 然后设置timeout#3
 //           // 所以， log()#3 结束后，就只剩timeout#3在独自等待了
