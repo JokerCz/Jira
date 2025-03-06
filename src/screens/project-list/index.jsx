@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import * as qs from "qs";
-import { cleanObject } from "screens/uitls";
-import { useMount, useDebounce } from "../uitls/index";
+import { cleanObject } from "screens/utils";
+import { useMount, useDebounce } from "../utils/index";
 
 import { List } from "./list";
 import { SearchPanel } from "./search-panel";
