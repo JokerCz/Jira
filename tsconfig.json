@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "target": "es5",
     "lib": [
       "dom",
@@ -19,7 +19,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "incremental": true,
+    "experimentalDecorators": true,
+    "tsBuildInfoFile": "./node_modules/.cache/.tsbuildinfo",
+    "paths": {
+      "screens/*": ["src/screens/*"],
+      "src/*": ["src/*"]
+    }
   },
   "include": [
     "src"

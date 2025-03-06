@@ -2,6 +2,7 @@
   "name": "jira",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
@@ -23,7 +24,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "json-server": "json-server __json_server_mock__/db.json --watch --port 3001",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "eslintConfig": {
     "extends": [
@@ -45,15 +49,23 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.3.0",
+    "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^16.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-environment-jsdom": "^27.5.1",
     "json-server": "^1.0.0-beta.1",
     "lint-staged": "^12.4.1",
     "prettier": "2.6.2",
-    "prettier-eslint": "^15.0.1"
+    "prettier-eslint": "^15.0.1",
+    "ts-jest": "^27.1.4"
   },
   "husky": {
     "hooks": {
@@ -62,6 +74,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,ts,tsx}": "eslint --fix",
+    "*.{js,css,md,ts,tsx}": "prettier --write"
   }
 }
